@@ -1,5 +1,14 @@
 ## GNS3 on Fedora
-This is my personal script to install GNS3 on fedora linux.
+
+This is a my personal script to install GNS3 on Fedora linu, published under the GNU GPLv3 License
+
+```
+git clone git://github.com/oshaghi1/gns3_on_fedora.git
+cd gns3_on_fedora
+chmod a+x *.sh
+./install.sh
+```
+
 
 # Fedora
 Fedora is an Unix-like operating system based on the Linux kernel and GNU programs, developed by the community-supported Fedora Project and sponsored by the Red Hat company https://fedoraproject.org/
