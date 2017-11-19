@@ -108,5 +108,7 @@ echo " GNS3 Installation script finishe          "
 echo " VPCS Install directory: /opt/vpcs/src     "
 
 
-echo " groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker"
 echo " newgrp docker "
+echo " groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker"
+
+
