@@ -10,7 +10,7 @@ fi
 dnf -y update
 
 # Install dynamips dependencies
-dnf -y install gcc cmake elfutils-libelf-devel libuuid-devel libpcap-devel python3-devel redhat-rpm-config python3-qt5 python3-sip glibc-static xterm wget git bison flex 
+dnf -y install gcc cmake elfutils-libelf-devel libuuid-devel libpcap-devel python3-devel redhat-rpm-config python3-qt5 python3-sip glibc-static xterm wget git bison flex docker tigervnc
 
 # Create a temporary folder on /tmp
 mkdir -p /tmp/build-dynamips
