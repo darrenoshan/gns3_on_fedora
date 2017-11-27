@@ -1,6 +1,6 @@
 ## GNS3 on Fedora
 
-This is a my personal script to install GNS3 on Fedora linu, published under the GNU GPLv3 License
+This is my personal script to install GNS3 on Fedora linu, published under the GNU GPLv3 License
 
 ```
 git clone git://github.com/oshaghi1/gns3_on_fedora.git
