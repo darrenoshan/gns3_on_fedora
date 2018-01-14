@@ -6,7 +6,7 @@ This is my personal script to install GNS3 on Fedora linu, published under the G
 git clone git://github.com/oshaghi1/gns3_on_fedora.git
 cd gns3_on_fedora
 chmod a+x *.sh
-./install.sh
+./normal.sh
 ```
 
 
