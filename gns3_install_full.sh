@@ -32,9 +32,6 @@ rm -rf /tmp/build-dynamips
 
 #======================iouyap========================#
 
-# Install dynamips dependencies
-dnf -y install 
-
 cd /tmp
 git clone http://github.com/ndevilla/iniparser.git
 cd iniparser
