@@ -47,7 +47,7 @@ make
 sudo make install
 
 
-#=====================vpcs==================#
+#=======================================#
 cd /tmp
 git clone git://github.com/GNS3/ubridge.git
 cd ubridge
@@ -58,15 +58,11 @@ make install
 
 #=====================vpcs==================#
 
-# Create a temporary folder on /tmp
-cd /opt/
+wget http://sourceforge.net/projects/vpcs/files/0.8/vpcs_0.8b_Linux64/download
+mv download vpcs
+chmod +x vpcs
+cp vpcs /usr/local/bin/
 
-# Clone repo from github
-git clone https://github.com/GNS3/vpcs.git
-cd vpcs/src
-sh mk.sh
-chmod +rx -R /opt/vpcs
-#/opt/vpcs/src/vpcs
 
 #=====================display to user==================#
 
