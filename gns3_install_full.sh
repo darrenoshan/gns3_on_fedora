@@ -58,10 +58,8 @@ make install
 
 #=====================vpcs==================#
 
-wget http://sourceforge.net/projects/vpcs/files/0.8/vpcs_0.8b_Linux64/download
-mv download vpcs
-chmod +x vpcs
-cp vpcs /usr/local/bin/
+dnf copr enable athmane/gns3-extra -y
+dnf install vpcs dynamips -y
 
 
 #=====================display to user==================#
