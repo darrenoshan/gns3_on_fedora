@@ -15,43 +15,34 @@ dnf -y install gns3-server gns3-gui.noarch gcc cmake elfutils-libelf-devel libuu
 
 #======================dynamips========================#
 # Create a temporary folder on /tmp
-mkdir -p /tmp/build-dynamips
+git clone git://github.com/GNS3/dynamips.git /tmp/build-dynamips
 cd /tmp/build-dynamips
-
-git clone git://github.com/GNS3/dynamips.git
-cd dynamips/
 mkdir build
 cd build
 cmake .. -DDYNAMIPS_ARCH=x86
 make install
-
 # Remove folder
 rm -rf /tmp/build-dynamips
-
 #======================iouyap========================#
-
-cd /tmp
-git clone http://github.com/ndevilla/iniparser.git
-cd iniparser
+git clone http://github.com/ndevilla/iniparser.git /tmp/iniparser/
+cd /tmp/iniparser/
 make
 sudo cp libiniparser.* /usr/lib/
 sudo cp src/iniparser.h /usr/local/include
 sudo cp src/dictionary.h /usr/local/include
-cd ..
-
-git clone https://github.com/GNS3/iouyap.git
-cd iouyap
+#============
+git clone https://github.com/GNS3/iouyap.git /tmp/iouyap/
+cd /tmp/iouyap/
 make
 sudo make install
-
+rm -rf /tmp/iniparser/ /tmp/iouyap/
 #=======================================#
-cd /tmp
-git clone git://github.com/GNS3/ubridge.git
-cd ubridge
+git clone https://github.com/GNS3/ubridge.git /tmp/ubridge
+cd /tmp/ubridge
 make
 make install
 ls -lash /usr/local/bin/ubridge
-
+rm -rf /tmp/ubridge
 #=====================vpcs==================#
 
 dnf copr enable athmane/gns3-extra -y
@@ -60,7 +51,7 @@ dnf install vpcs -y
 #=====================display to user==================#
 
 echo " GNS3 Installation script finished          "
-echo " VPCS Install directory: /opt/vpcs/src/vpcs     "
+echo " VPCS Install directory: /usr/bin/vpcs     "
 echo " newgrp docker "
 echo " groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker"
 echo " sudo usermod -a -G wireshark ${USER} "
