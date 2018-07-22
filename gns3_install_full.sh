@@ -6,47 +6,34 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-# you shoud update your fedora manually
 # Update system
-# dnf -y update
+#======================Update Fedora and Restart========================#
+# you shoud update your fedora manually using the command below :
+# dnf -y update && restart
 
 # Install dnf packages
 dnf -y install gns3-server gns3-gui.noarch gcc cmake elfutils-libelf-devel libuuid-devel libpcap-devel python3-devel redhat-rpm-config python3-qt5 python3-sip glibc-static xterm wget git bison flex docker tigervnc wireshark-qt elfutils-libelf-devel libpcap-devel glibc-devel.i686 elfutils-devel.i686 libpcap-devel.i686
+dnf copr enable athmane/gns3-extra -y
+dnf install vpcs -y
 
 #======================dynamips========================#
 # Create a temporary folder on /tmp
 git clone git://github.com/GNS3/dynamips.git /tmp/build-dynamips
-cd /tmp/build-dynamips
-mkdir build
-cd build
-cmake .. -DDYNAMIPS_ARCH=x86
-make install
-# Remove folder
-rm -rf /tmp/build-dynamips
+cd /tmp/build-dynamips && mkdir build && cd build && cmake .. -DDYNAMIPS_ARCH=x86 && make install
 #======================iouyap========================#
 git clone http://github.com/ndevilla/iniparser.git /tmp/iniparser/
-cd /tmp/iniparser/
-make
+cd /tmp/iniparser/ && make
 sudo cp libiniparser.* /usr/lib/
 sudo cp src/iniparser.h /usr/local/include
 sudo cp src/dictionary.h /usr/local/include
 #============
 git clone https://github.com/GNS3/iouyap.git /tmp/iouyap/
-cd /tmp/iouyap/
-make
-sudo make install
-rm -rf /tmp/iniparser/ /tmp/iouyap/
-#=======================================#
-git clone https://github.com/GNS3/ubridge.git /tmp/ubridge
-cd /tmp/ubridge
-make
-make install
-ls -lash /usr/local/bin/ubridge
-rm -rf /tmp/ubridge
-#=====================vpcs==================#
+cd /tmp/iouyap/ && make && sudo make install
 
-dnf copr enable athmane/gns3-extra -y
-dnf install vpcs -y
+#==================CLEAN UP==================#
+rm -rf /tmp/build-dynamips
+rm -rf /tmp/iniparser/ /tmp/iouyap/
+rm -rf /tmp/ubridge
 
 #=====================display to user==================#
 
