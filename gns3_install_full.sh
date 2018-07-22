@@ -33,10 +33,8 @@ cd /tmp/iouyap/ && make && sudo make install
 #==================CLEAN UP==================#
 rm -rf /tmp/build-dynamips /tmp/iniparser/ /tmp/iouyap/
 
-#=====================display to user==================#
+newgrp docker && groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
+sudo usermod -a -G wireshark ${USER}
 
+#=====================display to user==================#
 echo " GNS3 Installation script finished          "
-echo " VPCS Install directory: /usr/bin/vpcs     "
-echo " newgrp docker "
-echo " groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker"
-echo " sudo usermod -a -G wireshark ${USER} "
