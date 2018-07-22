@@ -31,9 +31,7 @@ git clone https://github.com/GNS3/iouyap.git /tmp/iouyap/
 cd /tmp/iouyap/ && make && sudo make install
 
 #==================CLEAN UP==================#
-rm -rf /tmp/build-dynamips
-rm -rf /tmp/iniparser/ /tmp/iouyap/
-rm -rf /tmp/ubridge
+rm -rf /tmp/build-dynamips /tmp/iniparser/ /tmp/iouyap/
 
 #=====================display to user==================#
 
