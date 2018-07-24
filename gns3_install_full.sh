@@ -34,7 +34,7 @@ cd /tmp/iouyap/ && make && sudo make install
 rm -rf /tmp/build-dynamips /tmp/iniparser/ /tmp/iouyap/
 
 newgrp docker && groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
-sudo usermod -a -G wireshark ${USER}
+sudo usermod -a -G wireshark `who | head -n 1 | cut -d " " -f 1`
 
 #=====================display to user==================#
 echo " GNS3 Installation script finished          "
