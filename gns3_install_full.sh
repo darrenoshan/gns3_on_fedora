@@ -39,7 +39,8 @@ sudo cp -u dock/default.script /usr/lib/python3.*/site-packages/gns3server/compu
 #==================CLEAN UP==================#
 rm -rf /tmp/build-dynamips /tmp/iniparser/ /tmp/iouyap/
 
-newgrp docker && groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
+newgrp docker;  groupadd docker; sudo gpasswd -a ${USER} docker
+sudo systemctl restart docker;  sudo systemctl enable docker
 sudo usermod -a -G wireshark `who | head -n 1 | cut -d " " -f 1`
 
 #=====================display to user==================#
