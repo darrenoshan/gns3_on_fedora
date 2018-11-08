@@ -1,0 +1,1 @@
+mate-terminal --tab -e "telnet %h %p"  -t "%d" --maximize --hide-menubar
