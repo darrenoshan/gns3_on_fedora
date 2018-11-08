@@ -12,7 +12,7 @@ fi
 # dnf -y update && restart
 
 # Install dnf packages
-dnf -y install gns3-server gns3-gui.noarch gcc cmake elfutils-libelf-devel libuuid-devel libpcap-devel python3-devel redhat-rpm-config python3-qt5 python3-sip glibc-static xterm wget git bison flex docker tigervnc wireshark-qt elfutils-libelf-devel libpcap-devel glibc-devel.i686 elfutils-devel.i686 libpcap-devel.i686
+dnf -y install gns3-server gns3-gui.noarch xfce4-terminal gcc cmake elfutils-libelf-devel libuuid-devel libpcap-devel python3-devel redhat-rpm-config python3-qt5 python3-sip glibc-static xterm wget git bison flex docker tigervnc wireshark-qt elfutils-libelf-devel libpcap-devel glibc-devel.i686 elfutils-devel.i686 libpcap-devel.i686
 dnf copr enable athmane/gns3-extra -y
 dnf install vpcs -y
 
