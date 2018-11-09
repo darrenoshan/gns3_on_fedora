@@ -31,6 +31,7 @@ git clone https://github.com/GNS3/iouyap.git /tmp/iouyap/
 cd /tmp/iouyap/ && make && sudo make install
 
 #=====================fix gns3 fedora docker==================#
+sudo chmod a+x dock/init.sh dock/busybox dock/default.script
 sudo cp -u dock/init.sh  /usr/lib/python3.*/site-packages/gns3server/compute/docker/resources/
 sudo cp -u dock/busybox /usr/lib/python3.*/site-packages/gns3server/compute/docker/resources/bin/
 sudo cp -u dock/default.script /usr/lib/python3.*/site-packages/gns3server/compute/docker/resources/etc/udhcpc/
